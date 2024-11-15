@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import java.util.Random;
+ public class Ng1 
+    {
+    Random r=new Random();
+    Scanner ip=new Scanner(System.in);
+    int no;
+    int randomgenerate(){
+        no=r.nextInt(1,11);
+        return no;
+    }   
+    }
+class Ng extends Ng1{
+    int no,r,count;
+    void set(){
+        Ng1 ob=new Ng1();
+        r=ob.randomgenerate();
+    }
+    void check(){
+        System.out.println("Welcome to number game");
+        for(count=3;count>0;){
+            System.out.println("Guess the number");
+            no=ip.nextInt();
+        if(no>r){System.out.println("you guess a larger number\nTry again");}
+        else if(no==r){System.out.println("Correct!! you Won !");break;}
+        else{System.out.println("you guess a smaller number\nTry again");}
+        count--;
+        System.out.println("Chances left="+count);
+    }
+    if(count==0){
+        System.out.println("You lost the game");
+    }
+    }
+    public static void main(String[]args){
+        Ng ob=new Ng();
+        ob.set();
+        ob.check();
+    }
+}
+
+    
