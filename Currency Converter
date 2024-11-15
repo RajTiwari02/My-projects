@@ -1,0 +1,62 @@
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class currencyconverter {
+
+    public static void main(String[]args){
+        double no,rupee,dollar,pound,euro;
+        DecimalFormat f=new DecimalFormat("##.###");
+        Scanner ip=new Scanner(System.in);
+        System.out.println("Welcome to my curreny converter project");
+        char choice;
+        do{
+        System.out.println("Enter the currency code\n1:Rupees\n2:Dollar\n3:Pound\n4:Euro");
+        no=ip.nextInt();
+                
+                if(no==1){
+                    System.out.println("Enter the amount in Rupees:");
+                    rupee=ip.nextDouble();
+                    dollar=rupee/77.34;
+                    System.out.println("Dollar :"+f.format(dollar));
+                    pound=rupee/94.46;
+                    System.out.println("Pound :"+f.format(pound));
+                    euro=rupee/80.36;
+                    System.out.println("Euro :"+f.format(euro));
+                }
+                else if(no==2){
+                    System.out.println("Enter the amount in Dollar:");
+                    dollar=ip.nextDouble();
+                    rupee= dollar * 77.34;
+                    System.out.println("Rupee :"+f.format(rupee));
+                    pound=dollar*94.46;
+                    System.out.println("Pound :"+f.format(pound));
+                    euro=dollar*80.36;
+                    System.out.println("Euro :"+f.format(euro));
+                }
+                else if(no==3){
+                    System.out.println("Enter the amount in Pound:");
+                    pound=ip.nextDouble();
+                    dollar=pound*1.22;
+                    System.out.println("Dollar :"+f.format(dollar));
+                    rupee=pound*94.43;
+                    System.out.println("Rupee :"+f.format(rupee));
+                    euro=pound*1.17;
+                    System.out.println("Euro :"+f.format(euro));
+                }
+                else if(no==4){
+                    System.out.println("Enter the amount in Euro:");
+                    euro=ip.nextDouble();
+                    dollar=euro*1.84;
+                    System.out.println("Dollar :"+f.format(dollar));
+                    pound=euro*0.85;
+                    System.out.println("Pound :"+f.format(pound));
+                    rupee=euro*80.43;
+                    System.out.println("Rupee :"+f.format(rupee));
+                }
+            
+                else System.out.println("Invalid choice");
+                System.out.println("press Y to continue.....");
+                   choice = ip.next().charAt(0);
+            }while (choice == 'y' || choice == 'Y');
+    
+}
+}
